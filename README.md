@@ -51,8 +51,8 @@ Run the automated setup script:
 pip install -r requirements.txt
 ```
 
+## Usage examples
 ```bash
-# Usage example
 python kmeans_archive.py -i ./project -o ./backup -k 8 -c zstd -r
 
 # XZ fast compression (level 1)
