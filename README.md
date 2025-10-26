@@ -49,12 +49,15 @@ Run the automated setup script:
 
 ```bash
 pip install -r requirements.txt
+```
 
+```bash
 # Usage example
 python kmeans_archive.py -i ./project -o ./backup -k 8 -c zstd -r
-#
+
 # XZ fast compression (level 1)
 python kmeans_archive.py -i ~/Documents -o ~/Backup -k 8 -c xz --xz-level 1
 
 # Zstandard fast compression (level 1)
 python kmeans_archive.py -i ~/Documents -o ~/Backup -k 8 -c zstd --zstd-level 1
+```	
