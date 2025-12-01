@@ -1,6 +1,6 @@
-# K-Means File Clustering and Archiving
+# K-Means and GMM File Clustering and Archiving
 
-A Python script that uses k-means clustering to intelligently group files based on their characteristics and creates compressed tar archives for each cluster.
+A Python script that uses k-means and gmm clustering to intelligently group files based on their characteristics and creates compressed tar archives for each cluster.
 
 ## Features
 
@@ -30,6 +30,7 @@ Command-Line Arguments
 - `-k, --clusters`: Number of clusters (default: 5)
 - `-c, --compression`: Compression type - `xz`, `zstd`, or `both` (default: xz)
 - `-r, --recursive`: Scan subdirectories recursively
+- `-a, --algorithm`: Set cluster algorithm to use (default: kmeans)
 - `--xz-level`: XZ compression level 0-9 (default: 6)
   - 0 = fastest, lowest compression
   - 6 = balanced (default)
@@ -53,11 +54,11 @@ pip install -r requirements.txt
 
 ## Usage examples
 ```bash
-python kmeans_archive.py -i ./project -o ./backup -k 8 -c zstd -r
+python cluster_and_compress.py -i ./project -o ./backup -k 8 -c zstd -r
 
 # XZ fast compression (level 1)
-python kmeans_archive.py -i ~/Documents -o ~/Backup -k 8 -c xz --xz-level 1
+python cluster_and_compress.py -i ~/Documents -o ~/Backup -k 8 -c xz -a gmm --xz-level 1
 
 # Zstandard fast compression (level 1)
-python kmeans_archive.py -i ~/Documents -o ~/Backup -k 8 -c zstd --zstd-level 1
+python cluster_and_compress.py -i ~/Documents -o ~/Backup -k 8 -c zstd -a kmeans --zstd-level 1
 ```	
